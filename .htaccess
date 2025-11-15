@@ -1,0 +1,5 @@
+AddType application/x-httpd-php84 .php
+
+<FilesMatch "\.(json|tmp)$">
+    Require all denied
+</FilesMatch>
