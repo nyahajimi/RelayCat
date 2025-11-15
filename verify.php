@@ -162,7 +162,7 @@ try {
         ]);
         $resp = curl_exec($ch);
         $http = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
+        // curl_close($ch);
 
         if ($resp === false || $http !== 200) render_error('验证码验证失败（网络错误），请重试。');
 
