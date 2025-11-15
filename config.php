@@ -29,6 +29,10 @@ const ROUTE_MAP_FILE      = DATA_DIR . '/routes.json';
 const BANNED_USERS_FILE   = DATA_DIR . '/banned_users.json';
 const RATE_LIMIT_FILE     = DATA_DIR . '/rate_limit.json';
 
+// 路由表清理策略（webhook.php 的 route_save 会用到）
+const ROUTE_TTL_SECONDS = 7 * 24 * 60 * 60; // 7 天内未使用的路由记录会被清理
+const ROUTE_MAX_ENTRIES = 20000;           // 最多保留 2 万条路由映射
+
 // ==================== 速率限制（防风暴/DoS） ====================
 const RATE_LIMIT_ENABLED     = true;
 const RATE_LIMIT_WINDOW_SEC  = 10;    // 滑窗：10 秒
